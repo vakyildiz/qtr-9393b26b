@@ -58,7 +58,7 @@
 .tp .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 </style>
 <div class="tp">
- <div class="head"><h1>Bosphorus <b>· Qatar Tender Portalı</b></h1><span class="upd" id="upd">Son güncelleme: 14 Temmuz 2026 · günlük otomatik tarama 16:00</span></div>
+ <div class="head"><h1>Bosphorus <b>· Qatar Tender Portalı</b></h1><span class="upd" id="upd">Son güncelleme: 16 Temmuz 2026 · günlük otomatik tarama 16:00</span></div>
  <div class="tools">
   <button class="tbtn" onclick="scanNew()">📥 Yeni tenderları tara (Claude talimatı)</button>
   <button class="tbtn" onclick="scanReplies()">🔎 Cevap gelenleri tara (istenenler)</button>
@@ -95,7 +95,7 @@ const dtxt=d=>d===null?'RFI':d<0?'geçti':d===0?'BUGÜN':d+' g';
 const nowT=()=>new Date().toISOString().slice(0,10);
 let F='all',Q='',AG='',S='kapanis',DIR=1;
 const ag=document.getElementById('agent');[...new Set(DATA.map(x=>x.araci))].sort().forEach(a=>ag.add(new Option(a,a)));
-document.getElementById('upd').textContent='Güncelleme 14.07.2026 · '+DATA.length+' satır';
+document.getElementById('upd').textContent='Güncelleme 16.07.2026 · '+DATA.length+' satır';
 function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
 function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('on');setTimeout(()=>e.classList.remove('on'),1900)}
 function buildMail(x){const urunAd=x.marka&&x.marka!=='—'?`${x.marka} (${x.urun} ${x.doz})`:`${x.urun} ${x.doz}`;const kap=x.kapanis>='2099'?'teyit edilecek':x.kapanis.split('-').reverse().join('.');
